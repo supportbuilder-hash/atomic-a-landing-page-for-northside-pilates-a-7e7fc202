@@ -112,6 +112,11 @@ export default function Home() {
         <section className="relative overflow-hidden bg-mesh">
           <div className="mx-auto grid max-w-7xl gap-12 px-6 py-28 md:py-36 lg:grid-cols-2 lg:items-center">
             <div>
+              <span className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary-foreground mb-4 shadow-glow">
+                <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
+                {t("hero.badge")}
+              </span>
+              <br />
               <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-sm font-medium text-muted-foreground">
                 <Sparkles className="h-4 w-4 text-primary" aria-hidden="true" />
                 {t("hero.eyebrow")}
@@ -196,11 +201,15 @@ export default function Home() {
                       <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
                         <Icon className="h-6 w-6" aria-hidden="true" />
                       </div>
-                      <h3 className="mt-5 text-lg font-semibold text-foreground">{item.title}</h3>
+                      <h3 className="mt-5 text-lg font-display font-semibold text-foreground">{item.title}</h3>
                       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
-                      <div className="mt-5 flex flex-wrap items-center gap-2 text-xs font-medium text-muted-foreground">
-                        <span className="rounded-full bg-secondary px-3 py-1">{item.duration}</span>
-                        <span className="rounded-full bg-secondary px-3 py-1">{item.level}</span>
+                      <div className="mt-4 flex items-center gap-3 text-xs text-muted-foreground">
+                        <span className="inline-flex items-center gap-1">
+                          <Clock className="h-3.5 w-3.5" aria-hidden="true" />
+                          {item.duration}
+                        </span>
+                        <span>•</span>
+                        <span>{item.level}</span>
                       </div>
                     </div>
                   </Reveal>
@@ -226,36 +235,26 @@ export default function Home() {
             {SCHEDULE_DAYS.length > 0 && (
               <div className="mt-14">
                 <Tabs defaultValue={SCHEDULE_DAYS[0]?.day ?? ""}>
-                  <div className="-mx-6 overflow-x-auto px-6 pb-2">
-                    <TabsList className="flex-nowrap gap-1 whitespace-nowrap">
-                      {SCHEDULE_DAYS.map((d) => (
-                        <TabsTrigger key={d.day} value={d.day}>
-                          {d.day}
-                        </TabsTrigger>
-                      ))}
-                    </TabsList>
-                  </div>
+                  <TabsList>
+                    {SCHEDULE_DAYS.map((d) => (
+                      <TabsTrigger key={d.day} value={d.day}>
+                        {d.day}
+                      </TabsTrigger>
+                    ))}
+                  </TabsList>
                   {SCHEDULE_DAYS.map((d) => (
                     <TabsContent key={d.day} value={d.day}>
-                      <Card>
-                        <CardContent className="divide-y divide-border p-0">
-                          {d.classes.map((c, i) => (
-                            <div
-                              key={`${d.day}-${i}`}
-                              className="flex flex-col gap-2 p-5 sm:flex-row sm:items-center sm:justify-between"
-                            >
-                              <div className="flex items-center gap-3">
-                                <Clock className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-                                <span className="text-sm font-medium text-foreground">{c.time}</span>
-                              </div>
-                              <div className="sm:flex-1 sm:px-6">
-                                <span className="text-sm font-semibold text-foreground">{c.title}</span>
-                              </div>
-                              <span className="text-sm text-muted-foreground">{c.instructor}</span>
-                            </div>
-                          ))}
-                        </CardContent>
-                      </Card>
+                      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                        {d.classes.map((c, i) => (
+                          <Card key={i}>
+                            <CardContent className="p-5">
+                              <div className="text-sm font-semibold text-primary">{c.time}</div>
+                              <div className="mt-1 font-display text-base font-semibold text-foreground">{c.title}</div>
+                              <div className="mt-1 text-sm text-muted-foreground">{c.instructor}</div>
+                            </CardContent>
+                          </Card>
+                        ))}
+                      </div>
                     </TabsContent>
                   ))}
                 </Tabs>
@@ -277,15 +276,15 @@ export default function Home() {
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{t("instructors.subtitle")}</p>
             </div>
-            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {INSTRUCTOR_ITEMS.map((item, i) => (
-                <Reveal key={i} delay={i * 0.06}>
+            <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {INSTRUCTOR_ITEMS.map((person, i) => (
+                <Reveal key={i} delay={i * 0.08}>
                   <div className="surface-elevated overflow-hidden rounded-2xl border border-border bg-card">
-                    <img src={item.image} alt={item.name} className="aspect-square w-full object-cover" />
+                    <img src={person.image} alt={person.name} className="aspect-[4/3] w-full object-cover" />
                     <div className="p-6">
-                      <h3 className="text-lg font-semibold text-foreground">{item.name}</h3>
-                      <p className="mt-1 text-sm font-medium text-primary">{item.role}</p>
-                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.bio}</p>
+                      <h3 className="font-display text-lg font-semibold text-foreground">{person.name}</h3>
+                      <p className="text-sm font-medium text-primary">{person.role}</p>
+                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{person.bio}</p>
                     </div>
                   </div>
                 </Reveal>
@@ -307,55 +306,43 @@ export default function Home() {
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{t("pricing.subtitle")}</p>
             </div>
-            <div className="mt-14 grid gap-6 md:grid-cols-3">
+            <div className="mt-14 grid gap-8 lg:grid-cols-3">
               {PRICING_PLANS.map((plan, i) => (
-                <Reveal key={i} delay={i * 0.06}>
+                <Reveal key={i} delay={i * 0.08}>
                   <div
                     className={cn(
-                      "relative flex h-full flex-col rounded-2xl border p-8 transition-all duration-300 ease-out hover:-translate-y-1",
+                      "relative flex h-full flex-col rounded-2xl border p-8",
                       plan.highlighted
-                        ? "border-primary bg-primary text-primary-foreground shadow-glow"
-                        : "border-border bg-card hover:shadow-lg",
+                        ? "border-primary bg-card shadow-glow"
+                        : "border-border bg-card",
                     )}
                   >
                     {plan.badge && (
-                      <span className="absolute -top-3 left-8 rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">
+                      <span className="absolute -top-3 left-8 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
                         {plan.badge}
                       </span>
                     )}
-                    <h3 className={cn("text-lg font-semibold", !plan.highlighted && "text-foreground")}>{plan.name}</h3>
-                    <p
-                      className={cn(
-                        "mt-2 text-sm",
-                        plan.highlighted ? "text-primary-foreground/80" : "text-muted-foreground",
-                      )}
-                    >
-                      {plan.description}
-                    </p>
+                    <h3 className="font-display text-xl font-semibold text-foreground">{plan.name}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">{plan.description}</p>
                     <div className="mt-6 flex items-baseline gap-1">
-                      <span className="text-4xl font-display font-semibold">{plan.price}</span>
-                      <span className={cn("text-sm", plan.highlighted ? "text-primary-foreground/80" : "text-muted-foreground")}>
-                        {plan.period}
-                      </span>
+                      <span className="text-4xl font-display font-semibold text-foreground">{plan.price}</span>
+                      <span className="text-sm text-muted-foreground">{plan.period}</span>
                     </div>
                     <ul className="mt-6 flex-1 space-y-3">
-                      {plan.features.map((feature, fi) => (
-                        <li key={fi} className="flex items-start gap-2 text-sm">
-                          <Check
-                            className={cn("mt-0.5 h-4 w-4 shrink-0", plan.highlighted ? "text-primary-foreground" : "text-primary")}
-                            aria-hidden="true"
-                          />
-                          <span className={plan.highlighted ? "text-primary-foreground/90" : "text-foreground"}>{feature}</span>
+                      {plan.features.map((feature, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                          {feature}
                         </li>
                       ))}
                     </ul>
                     <Link
                       href="#trial"
                       className={cn(
-                        "mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                        "mt-8 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-0.5",
                         plan.highlighted
-                          ? "bg-card text-foreground hover:shadow-lg"
-                          : "bg-primary text-primary-foreground hover:shadow-lg",
+                          ? "bg-primary text-primary-foreground shadow-glow hover:shadow-lg"
+                          : "border border-border text-foreground hover:shadow-md",
                       )}
                     >
                       {t("pricing.cta")}
@@ -369,36 +356,38 @@ export default function Home() {
       </Reveal>
 
       <Reveal>
-        <section id="trial" className="bg-mesh py-24 md:py-32">
+        <section id="trial" className="bg-muted/30 py-24 md:py-32">
           <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2 lg:items-start">
             <div>
-              <span className="text-sm font-semibold uppercase tracking-wide text-primary">{t("trial.eyebrow")}</span>
+              <span className="text-sm font-semibold uppercase tracking-wide text-primary">
+                {t("trial.eyebrow")}
+              </span>
               <h2 className="mt-3 text-balance text-3xl font-display font-semibold tracking-tight text-foreground md:text-4xl">
                 {t("trial.title")}
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{t("trial.subtitle")}</p>
-              <ul className="mt-8 space-y-4">
+              <ul className="mt-8 space-y-3">
                 {TRIAL_BENEFITS.map((benefit, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-foreground">
-                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+                  <li key={i} className="flex items-start gap-2 text-sm text-foreground">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
                     {benefit}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="glass-strong rounded-3xl p-8">
+            <div className="surface-elevated rounded-2xl border border-border bg-card p-8">
               {submitted ? (
-                <div className="flex flex-col items-center justify-center gap-3 py-12 text-center">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <Check className="h-7 w-7" aria-hidden="true" />
+                <div className="flex flex-col items-center justify-center py-10 text-center">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <Check className="h-6 w-6" aria-hidden="true" />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground">{t("trial.successTitle")}</h3>
-                  <p className="text-sm text-muted-foreground">{t("trial.successSubtitle")}</p>
+                  <h3 className="mt-4 font-display text-lg font-semibold text-foreground">{t("trial.successTitle")}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{t("trial.successMessage")}</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
-                    <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-foreground">
+                    <label htmlFor="name" className="text-sm font-medium text-foreground">
                       {t("trial.nameLabel")}
                     </label>
                     <input
@@ -408,11 +397,11 @@ export default function Home() {
                       required
                       value={form.name}
                       onChange={handleChange}
-                      className="w-full rounded-lg border border-border bg-card px-4 py-2.5 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                      className="mt-2 w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-foreground">
+                    <label htmlFor="email" className="text-sm font-medium text-foreground">
                       {t("trial.emailLabel")}
                     </label>
                     <input
@@ -422,11 +411,11 @@ export default function Home() {
                       required
                       value={form.email}
                       onChange={handleChange}
-                      className="w-full rounded-lg border border-border bg-card px-4 py-2.5 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                      className="mt-2 w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-foreground">
+                    <label htmlFor="phone" className="text-sm font-medium text-foreground">
                       {t("trial.phoneLabel")}
                     </label>
                     <input
@@ -435,11 +424,11 @@ export default function Home() {
                       type="tel"
                       value={form.phone}
                       onChange={handleChange}
-                      className="w-full rounded-lg border border-border bg-card px-4 py-2.5 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                      className="mt-2 w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     />
                   </div>
                   <div>
-                    <label htmlFor="classType" className="mb-1.5 block text-sm font-medium text-foreground">
+                    <label htmlFor="classType" className="text-sm font-medium text-foreground">
                       {t("trial.classLabel")}
                     </label>
                     <select
@@ -447,7 +436,7 @@ export default function Home() {
                       name="classType"
                       value={form.classType}
                       onChange={handleChange}
-                      className="w-full rounded-lg border border-border bg-card px-4 py-2.5 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                      className="mt-2 w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     >
                       {CLASS_ITEMS.map((item, i) => (
                         <option key={i} value={item.title}>
@@ -473,13 +462,15 @@ export default function Home() {
         <section id="contact" className="bg-background py-24 md:py-32">
           <div className="mx-auto max-w-7xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <span className="text-sm font-semibold uppercase tracking-wide text-primary">{t("contact.eyebrow")}</span>
+              <span className="text-sm font-semibold uppercase tracking-wide text-primary">
+                {t("contact.eyebrow")}
+              </span>
               <h2 className="mt-3 text-balance text-3xl font-display font-semibold tracking-tight text-foreground md:text-4xl">
                 {t("contact.title")}
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{t("contact.subtitle")}</p>
             </div>
-            <div className="mt-14 grid gap-6 sm:grid-cols-3">
+            <div className="mt-14 grid gap-8 sm:grid-cols-3">
               <div className="rounded-2xl border border-border bg-card p-6 text-center">
                 <MapPin className="mx-auto h-6 w-6 text-primary" aria-hidden="true" />
                 <p className="mt-3 text-sm text-muted-foreground">{t("contact.address")}</p>
@@ -493,16 +484,13 @@ export default function Home() {
                 <p className="mt-3 text-sm text-muted-foreground">{t("contact.email")}</p>
               </div>
             </div>
-            <div className="mt-10 mx-auto max-w-md rounded-2xl border border-border bg-card p-6">
-              <h3 className="text-center text-sm font-semibold text-foreground">{t("contact.hoursTitle")}</h3>
-              <ul className="mt-4 space-y-2">
-                {HOURS_ITEMS.map((item, i) => (
-                  <li key={i} className="flex items-center justify-between text-sm text-muted-foreground">
-                    <span>{item.day}</span>
-                    <span>{item.hours}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="mt-10 grid gap-3 sm:grid-cols-2">
+              {HOURS_ITEMS.map((hour, i) => (
+                <div key={i} className="flex items-center justify-between rounded-lg border border-border bg-card px-5 py-3 text-sm">
+                  <span className="font-medium text-foreground">{hour.day}</span>
+                  <span className="text-muted-foreground">{hour.hours}</span>
+                </div>
+              ))}
             </div>
           </div>
         </section>
