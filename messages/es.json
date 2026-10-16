@@ -1,0 +1,362 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "classes": "Clases",
+    "instructors": "Instructores",
+    "pricing": "Precios",
+    "studio": "Estudio"
+  },
+  "cta": {
+    "primary": "Comenzar prueba gratuita"
+  },
+  "footer": {
+    "tagline": "Movimiento tranquilo y considerado para profesionales ocupados",
+    "rights": "Todos los derechos reservados.",
+    "columns": {
+      "studio": "Estudio",
+      "visit": "Visita"
+    },
+    "links": {
+      "classes": "Tipos de clases",
+      "instructors": "Instructores",
+      "pricing": "Precios",
+      "trial": "Prueba gratuita",
+      "contact": "Visítanos"
+    }
+  },
+  "hero": {
+    "eyebrow": "Pilates boutique, centro norte",
+    "titleStart": "Muévete con intención,",
+    "titleHighlight": "incluso en tu semana más ocupada",
+    "subtitle": "Northside Pilates es un estudio tranquilo y considerado para profesionales que desean fuerza y serenidad sin sacrificar su agenda. Sesiones de cincuenta minutos, instructores expertos, cero caos.",
+    "primaryCta": "Reserva tu clase de prueba gratuita",
+    "secondaryCta": "Ver tipos de clases"
+  },
+  "overview": {
+    "title": "Detalles del estudio, de un vistazo",
+    "subtitle": "Clases pequeñas, instrucción precisa y un horario diseñado alrededor de cómo trabajan realmente los profesionales.",
+    "facts": [
+      {
+        "value": "6",
+        "label": "Class formats to choose from"
+      },
+      {
+        "value": "8",
+        "label": "Maximum clients per class"
+      },
+      {
+        "value": "50 min",
+        "label": "Average session length"
+      },
+      {
+        "value": "7 days",
+        "label": "Studio open every week"
+      }
+    ]
+  },
+  "classes": {
+    "eyebrow": "Tipos de clases",
+    "title": "Elige el formato que se adapte a tu cuerpo y tu calendario",
+    "subtitle": "Todas las clases se imparten en grupos pequeños para que los instructores puedan corregir la forma, ajustar la intensidad y mantener cada sesión genuinamente útil, no solo ocupada.",
+    "items": [
+      {
+        "title": "Reformer Flow",
+        "description": "A full-body, spring-resisted class that builds strength and control at a steady, considered pace.",
+        "duration": "50 min",
+        "level": "All levels"
+      },
+      {
+        "title": "Mat Pilates",
+        "description": "Classical mat work focused on core stability, posture, and breath, no equipment required.",
+        "duration": "45 min",
+        "level": "Beginner friendly"
+      },
+      {
+        "title": "Barre Fusion",
+        "description": "Small isometric movements paired with Pilates principles for endurance and long, lean strength.",
+        "duration": "50 min",
+        "level": "Intermediate"
+      },
+      {
+        "title": "Private Session",
+        "description": "One-on-one instruction tailored to injury recovery, specific goals, or simply your own pace.",
+        "duration": "55 min",
+        "level": "Private"
+      },
+      {
+        "title": "Lunchtime Express",
+        "description": "A condensed reformer circuit designed to fit neatly inside a workday break.",
+        "duration": "30 min",
+        "level": "All levels"
+      },
+      {
+        "title": "Restorative Stretch",
+        "description": "Slow, guided mobility work to release tension built up from long hours at a desk.",
+        "duration": "40 min",
+        "level": "All levels"
+      }
+    ]
+  },
+  "schedule": {
+    "eyebrow": "Horario semanal",
+    "title": "Encuentra una clase que se adapte a tu semana",
+    "subtitle": "Una semana completa de sesiones en grupos pequeños, programadas alrededor de la jornada laboral.",
+    "days": [
+      {
+        "day": "Monday",
+        "classes": [
+          {
+            "time": "6:30 AM",
+            "title": "Reformer Flow",
+            "instructor": "Elena Marsh"
+          },
+          {
+            "time": "12:15 PM",
+            "title": "Lunchtime Express",
+            "instructor": "Elena Marsh"
+          },
+          {
+            "time": "5:30 PM",
+            "title": "Mat Pilates",
+            "instructor": "Owen Reyes"
+          },
+          {
+            "time": "6:45 PM",
+            "title": "Barre Fusion",
+            "instructor": "Owen Reyes"
+          }
+        ]
+      },
+      {
+        "day": "Tuesday",
+        "classes": [
+          {
+            "time": "6:30 AM",
+            "title": "Mat Pilates",
+            "instructor": "Owen Reyes"
+          },
+          {
+            "time": "12:15 PM",
+            "title": "Lunchtime Express",
+            "instructor": "Elena Marsh"
+          },
+          {
+            "time": "6:00 PM",
+            "title": "Private Session",
+            "instructor": "Priya Shah"
+          }
+        ]
+      },
+      {
+        "day": "Wednesday",
+        "classes": [
+          {
+            "time": "6:30 AM",
+            "title": "Reformer Flow",
+            "instructor": "Elena Marsh"
+          },
+          {
+            "time": "12:15 PM",
+            "title": "Restorative Stretch",
+            "instructor": "Mateo Lin"
+          },
+          {
+            "time": "5:30 PM",
+            "title": "Barre Fusion",
+            "instructor": "Owen Reyes"
+          },
+          {
+            "time": "6:45 PM",
+            "title": "Reformer Flow",
+            "instructor": "Elena Marsh"
+          }
+        ]
+      },
+      {
+        "day": "Thursday",
+        "classes": [
+          {
+            "time": "6:30 AM",
+            "title": "Mat Pilates",
+            "instructor": "Owen Reyes"
+          },
+          {
+            "time": "12:15 PM",
+            "title": "Lunchtime Express",
+            "instructor": "Elena Marsh"
+          },
+          {
+            "time": "6:00 PM",
+            "title": "Private Session",
+            "instructor": "Priya Shah"
+          }
+        ]
+      },
+      {
+        "day": "Friday",
+        "classes": [
+          {
+            "time": "6:30 AM",
+            "title": "Reformer Flow",
+            "instructor": "Elena Marsh"
+          },
+          {
+            "time": "12:15 PM",
+            "title": "Restorative Stretch",
+            "instructor": "Mateo Lin"
+          },
+          {
+            "time": "5:30 PM",
+            "title": "Barre Fusion",
+            "instructor": "Owen Reyes"
+          }
+        ]
+      },
+      {
+        "day": "Saturday",
+        "classes": [
+          {
+            "time": "8:00 AM",
+            "title": "Reformer Flow",
+            "instructor": "Elena Marsh"
+          },
+          {
+            "time": "9:30 AM",
+            "title": "Mat Pilates",
+            "instructor": "Owen Reyes"
+          }
+        ]
+      },
+      {
+        "day": "Sunday",
+        "classes": [
+          {
+            "time": "9:00 AM",
+            "title": "Restorative Stretch",
+            "instructor": "Mateo Lin"
+          }
+        ]
+      }
+    ]
+  },
+  "instructors": {
+    "eyebrow": "Instructores",
+    "title": "Aprende de instructores que enseñan con precisión",
+    "subtitle": "Todos los instructores de Northside están certificados, experimentados y genuinamente interesados en cómo te mueves, no solo en cuántas clases tomas.",
+    "items": [
+      {
+        "name": "Elena Marsh",
+        "role": "Studio Director & Reformer Lead",
+        "bio": "Trained in classical and contemporary Pilates, Elena designs every reformer sequence taught in the studio.",
+        "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Elena%20Marsh"
+      },
+      {
+        "name": "Owen Reyes",
+        "role": "Barre & Mat Instructor",
+        "bio": "A former dancer, Owen brings precise alignment cues to every barre fusion and mat class.",
+        "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Owen%20Reyes"
+      },
+      {
+        "name": "Priya Shah",
+        "role": "Private Session Specialist",
+        "bio": "Priya works closely with clients recovering from injury or training around a demanding travel schedule.",
+        "image": "https://titoaistorageaccount.blob.core.windows.net/titoai-storage/site-images/98a8e2a87d1c4f55b6d29440f6b17d44.jpg"
+      },
+      {
+        "name": "Mateo Lin",
+        "role": "Mobility & Recovery Coach",
+        "bio": "Mateo leads restorative stretch and recovery sessions built for people who sit most of the day.",
+        "image": "https://titoaistorageaccount.blob.core.windows.net/titoai-storage/site-images/2f7319442cdc4ccaa67efe0ed1437767.jpg"
+      }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Membresía",
+    "title": "Precios simples, sin contratos a largo plazo",
+    "subtitle": "Elige un plan que se adapte a la frecuencia con la que realísticamente puedas asistir y ajusta en cualquier momento.",
+    "ctaLabel": "Comenzar con este plan",
+    "cta": "Comienza tu prueba gratuita",
+    "plans": [
+      {
+        "name": "Drop-In",
+        "price": "$38",
+        "period": "/class",
+        "description": "Flexible access for an unpredictable calendar.",
+        "features": [
+          "Book any class format",
+          "No commitment required",
+          "Online booking up to 2 weeks out"
+        ],
+        "highlighted": false
+      },
+      {
+        "name": "Studio Membership",
+        "price": "$229",
+        "period": "/month",
+        "description": "Our most popular plan for a consistent, weekly practice.",
+        "features": [
+          "8 classes per month",
+          "Priority booking window",
+          "Guest pass once a month",
+          "Rollover for unused classes"
+        ],
+        "highlighted": true,
+        "badge": "Most chosen"
+      },
+      {
+        "name": "Unlimited",
+        "price": "$349",
+        "period": "/month",
+        "description": "For clients who want Pilates woven into most weeks.",
+        "features": [
+          "Unlimited classes",
+          "Two private sessions per month",
+          "Complimentary mat kit",
+          "Dedicated onboarding call"
+        ],
+        "highlighted": false
+      }
+    ]
+  },
+  "trial": {
+    "eyebrow": "Prueba gratuita",
+    "title": "Prueba tu primera clase por nuestra cuenta",
+    "subtitle": "Cuéntanos un poco sobre tu horario y clase preferida, y nuestro equipo de estudio confirmará una hora que te funcione.",
+    "successTitle": "Estás en el horario",
+    "successMessage": "Un miembro de nuestro equipo se comunicará dentro de un día hábil para confirmar tu hora de clase.",
+    "nameLabel": "Nombre completo",
+    "namePlaceholder": "Jordan Blake",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "jordan@email.com",
+    "phoneLabel": "Teléfono (opcional)",
+    "phonePlaceholder": "(555) 123-4567",
+    "classLabel": "Clase preferida",
+    "submitLabel": "Reservar mi clase gratis",
+    "successSubtitle": "Revisa tu correo para confirmar y acceder a tu primera clase.",
+    "benefits": [
+      "One complimentary class, any format",
+      "A short fit assessment with an instructor",
+      "No payment details required to book",
+      "Flexible rescheduling if your week shifts"
+    ]
+  },
+  "contact": {
+    "eyebrow": "Visita el Estudio",
+    "title": "Encuéntranos en el corazón de Northside",
+    "subtitle": "Las visitas sin cita previa son bienvenidas para un recorrido, pero recomendamos reservar tu prueba gratuita con anticipación para que podamos guardar un lugar en la clase.",
+    "address": "118 Birchwood Lane, Northside, Minneapolis MN",
+    "phone": "(612) 555-0148",
+    "email": "hello@northsidepilates.studio",
+    "hoursTitle": "Horario de Clases",
+    "hours": [
+      {
+        "day": "Mon – Fri",
+        "hours": "6:00 AM – 8:00 PM"
+      },
+      {
+        "day": "Sat – Sun",
+        "hours": "8:00 AM – 2:00 PM"
+      }
+    ]
+  }
+}
